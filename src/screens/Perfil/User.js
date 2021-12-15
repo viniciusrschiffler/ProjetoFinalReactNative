@@ -3,7 +3,8 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import UserPerfil from './UserPerfil';
 import UserCancel from './UserCancel';
-import { Button } from 'react-native-elements';
+import { Button, Icon } from 'react-native-elements';
+
 
 const Stack = createStackNavigator()
 
@@ -17,11 +18,15 @@ export default props => {
                 <Stack.Screen 
                     name="UserPerfil"
                     component={UserPerfil}
-                    options={() => {
+                    options={({ navigation }) => {
                         return {
-                            tittle: "Editar Perfil",
+                            title: "Editar Perfil",
                             headerRight: () => (
-                                <Button />
+                                <Button 
+                                    onPress={() => navigation.navigate('UserCancel')}
+                                    type="clear"
+                                    icon={<Icon name="delete" size={25} color="#e5e5e5" />}
+                                />
                                 
                             )
                         }
@@ -30,6 +35,9 @@ export default props => {
                 <Stack.Screen 
                     name="UserCancel"
                     component={UserCancel}
+                    options={{
+                        title: "Cancelar Assinatura"
+                    }}
                 />
 
             </Stack.Navigator>
@@ -41,5 +49,5 @@ const screenOptions ={
     headerStyle: {
         backgroundColor: '#E50914'
     },
-    headerTintColor: '#141414'
+    headerTintColor: '#e5e5e5'
 }

@@ -12,14 +12,14 @@ const Stack = createStackNavigator()
 export default props => {
     return (
         
-        <NavigationContainer>
+        <NavigationContainer >
             
             <Stack.Navigator 
                 initialRouteName="UserPerfil"
                 screenOptions={screenOptions}>
                     
 
-                <Stack.Screen 
+                <Stack.Screen
                     name="UserPerfil"
                     component={UserPerfil}
                     options={({ navigation }) => {
@@ -59,5 +59,6 @@ const screenOptions ={
 const styles = StyleSheet.create({
     container:{
         backgroundColor: '#141414',
+        flexGrow: 1,
     }
 })

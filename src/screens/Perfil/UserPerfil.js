@@ -10,7 +10,7 @@ export default props => {
     const [cpf, setCpf] = useState('');
     const [cep, setCep] = useState('');
 
-    const cadastro = () => {
+    const editar = () => {
         //back
     }
 

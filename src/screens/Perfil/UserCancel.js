@@ -37,6 +37,7 @@ export default props => {
                 <ListItem 
                     key={user.id}
                     onPress={() => props.navigation.navigate('UserPerfil')}
+                    
                     >
                         
                     <Avatar source={{ uri: user.avatarUrl }} />
@@ -52,7 +53,7 @@ export default props => {
     }
 
                 return (
-                <View>
+                <View >
                     <FlatList
                         keyExtractor={user => user.id.toString()}
                         data={users}

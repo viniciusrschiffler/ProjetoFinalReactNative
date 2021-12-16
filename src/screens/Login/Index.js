@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, TouchableHighlight, TextInput, Button } from "react-native";
+import { View, Text, Image, TouchableHighlight, TextInput} from "react-native";
 
 import Styles from "./Styles";
 

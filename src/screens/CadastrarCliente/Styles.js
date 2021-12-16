@@ -9,43 +9,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     backgroundColor: "white",
   },
-  containerTopo: {
-    flexDirection: "row",
-    width: "100%",
-  },
-  image: {
-    width: 100,
-    height: 50,
-  },
-  privacid: {
-    flex: 1,
-    color: "black",
-    fontSize: 14,
-    textAlign: "right",
-    alignSelf: "center",
-  },
   descricaoF: {
-    marginTop: 30,
-    marginBottom: 20,
-    paddingVertical: 20,
-    paddingHorizontal: 45,
+    marginVertical: 5,
+    paddingHorizontal: 0,
     fontWeight: "700",
-    paddingBottom: 15,
+    paddingBottom: 10,
     color: "black",
-    fontSize: 35,
-    textAlign: "center",
-  },
-  descricao: {
-    paddingBottom: 50,
-    color: "black",
-    fontSize: 15,
-    paddingVertical: 20,
-    paddingHorizontal: 45,
+    fontSize: 22,
     textAlign: "center",
   },
   buscaBox: {
     alignContent: "center",
     width: "100%",
+    paddingBottom: 15
   },
   buscaInput: {
     width: "100%",

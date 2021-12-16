@@ -4,16 +4,20 @@ import {createStackNavigator} from '@react-navigation/stack'
 import UserPerfil from './UserPerfil';
 import UserCancel from './UserCancel';
 import { Button, Icon } from 'react-native-elements';
+import { StyleSheet, View } from 'react-native'
 
 
 const Stack = createStackNavigator()
 
 export default props => {
     return (
+        
         <NavigationContainer>
+            
             <Stack.Navigator 
                 initialRouteName="UserPerfil"
                 screenOptions={screenOptions}>
+                    
 
                 <Stack.Screen 
                     name="UserPerfil"
@@ -39,9 +43,10 @@ export default props => {
                         title: "Cancelar Assinatura"
                     }}
                 />
-
             </Stack.Navigator>
+            
         </NavigationContainer>
+        
     )
 }
 
@@ -51,3 +56,8 @@ const screenOptions ={
     },
     headerTintColor: '#e5e5e5'
 }
+const styles = StyleSheet.create({
+    container:{
+        backgroundColor: '#141414',
+    }
+})

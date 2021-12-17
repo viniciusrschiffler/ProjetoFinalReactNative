@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import axios from 'axios';
+import React, {useState, useEffect} from 'react';
 import { Text, View, StyleSheet, TextInput, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, Image, TouchableOpacity } from 'react-native'
 import users from '../../data/users';
 
@@ -6,34 +7,89 @@ export default props => {
 
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
-    const [dataNs, setDataNs] = useState('');
+    const [dataNascimento, setdataNascimento] = useState('');
     const [cpf, setCpf] = useState('');
     const [cep, setCep] = useState('');
 
     const editar = () => {
         //back
     }
+    const user = {} 
+    
+      async function handleSubmit () {
+        user.nome = nome
+        user.email = email
+        user.dataNascimento = dataNascimento
+        user.cpf = cpf
+        // user.endereco.cep = cep
 
-    return (
-        
+        console.log (user)
+      }
+
+          useEffect (() => {
+              async function getUser (){
+                  const userData = await axios.get ("https://ecommerce-residencia.herokuapp.com/cliente/8")
+                  user = userData
+                  console.log (userData)
+              }
+              getUser()
+          })      
+
+   return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 
         <View style={styles.container}>
             
-            <Image style={{width:100,height:27, marginBottom: 30, marginTop: -50}} source={require('../../assets/img/netfliiix.png')}/>
+            <Image source={require('../../assets/img/netfliiix.png')}
+                style={{
+                width:100,
+                height:27, 
+                marginBottom: 30, 
+                marginTop: -50}} 
+                
+            />
             
-            <TextInput  placeholder="Nome completo" style={styles.textInput} onChangeText={text=>setNome(text)} />
-            <TextInput placeholder="E-mail" style={styles.textInput} onChangeText={text=>setEmail(text)} />
-            <TextInput keyboardType="numeric" placeholder="Data de nascimento" style={styles.textInput} onChangeText={text=>setDataNs(text)} />
-            <TextInput keyboardType="numeric" placeholder="CPF" style={styles.textInput} onChangeText={text=>setCpf(text)} />
-            <TextInput keyboardType="numeric" placeholder="CEP" style={styles.textInput} onChangeText={text=>setCep(text)} />
+            <TextInput  
+                placeholder="Nome completo" 
+                style={styles.textInput} 
+                onChangeText={text=>setNome(text)} 
+            />
 
-            <TouchableOpacity style={styles.btnEditar} onPress={()=>editar()}>
-                <Text style={styles.btnText}>Editar</Text>
+            <TextInput 
+                placeholder="E-mail" 
+                style={styles.textInput} 
+                onChangeText={text=>setEmail(text)} 
+            />
+            
+            <TextInput 
+                keyboardType="numeric" 
+                placeholder="Data de nascimento" 
+                style={styles.textInput} 
+                onChangeText={text=>setdataNascimento(text)} 
+            />
+
+            <TextInput 
+                keyboardType="numeric" 
+                placeholder="CPF" 
+                style={styles.textInput} 
+                onChangeText={text=>setCpf(text)} 
+            />
+
+            <TextInput 
+                keyboardType="numeric" 
+                placeholder="CEP" 
+                style={styles.textInput} 
+                onChangeText={text=>setCep(text)} 
+            />
+
+
+            <TouchableOpacity style={styles.btnEditar} onPress={()=>handleSubmit()}>
+                <Text style={styles.btnText}>Salvar</Text>
             </TouchableOpacity>
 
-        </View>
+         </View>
         </TouchableWithoutFeedback>
+        
 
     )
 }

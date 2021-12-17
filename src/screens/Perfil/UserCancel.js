@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text, FlatList, Button, Alert } from 'react-native';
 import { ListItem, Avatar, Icon } from 'react-native-elements';
 import users from '../../data/users';
+import axios from 'axios';
 
 export default props => {
 
@@ -16,13 +17,17 @@ export default props => {
         )
     }
     */
+    /*const confirmUserDelection = async (idConta) => {
+        console.log(idConta);
+    };*/
+    
 
-    function confirmUserDelection(user) {
+    const confirmUserDelection = async (idConta) => {
         Alert.alert('Não vá!', 'Deseja mesmo cancelar sua assinatura?', [
             {
                 text: 'Sim',
                 onPress(){
-                    console.warn('Assinatura Encerrada')
+                    axios.delete("https://ecommerce-residencia.herokuapp.com/cliente/7")
                 }
             },
             {
@@ -45,7 +50,7 @@ export default props => {
                         <ListItem.Title>{user.name}</ListItem.Title>
                         <ListItem.Subtitle>{user.email}</ListItem.Subtitle>
                     </ListItem.Content>
-                    <Icon name={user.icon} size={30} onPress={() => confirmUserDelection(user)}/> 
+                    <Icon name={user.icon} size={30} onPress={() => confirmUserDelection(user.id)}/> 
                 </ListItem>
                 
                 

@@ -54,7 +54,7 @@ const screenOptions ={
     headerStyle: {
         backgroundColor: '#E50914'
     },
-    headerTintColor: '#e5e5e5'
+    headerTintColor: '#e5e5e5',
 }
 const styles = StyleSheet.create({
     container:{

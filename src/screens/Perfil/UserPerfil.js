@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
-import { Text, View, StyleSheet, TextInput, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, Image, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, TextInput, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, Image, TouchableOpacity, Alert } from 'react-native'
 import users from '../../data/users';
 
 export default props => {
@@ -22,7 +22,7 @@ export default props => {
         user.dataNascimento = dataNascimento
         user.cpf = cpf
         // user.endereco.cep = cep
-
+        alertSave()
         console.log (user)
       }
 
@@ -33,7 +33,12 @@ export default props => {
                   console.log (userData)
               }
               getUser()
-          })      
+          })  
+          
+          async function alertSave (idConta) {
+            Alert.alert('Editar Perfil', 'Perfil editado com sucesso!', [{text: 'Ok'}])
+        }
+    
 
    return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -83,7 +88,7 @@ export default props => {
             />
 
 
-            <TouchableOpacity style={styles.btnEditar} onPress={()=>handleSubmit()}>
+            <TouchableOpacity style={styles.btnEditar} onPress={() =>handleSubmit()}>
                 <Text style={styles.btnText}>Salvar</Text>
             </TouchableOpacity>
 

@@ -7,6 +7,5 @@ export const styles = EStyleSheet.create({
   landscapet: {
     flexDirection: "row",
     marginVertical: 1,
-    backgroundColor: "blue",
   },
 });

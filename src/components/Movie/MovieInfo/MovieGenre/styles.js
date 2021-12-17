@@ -15,7 +15,6 @@ export const styles = EStyleSheet.create({
     flexDirection: "row",
     color: colors.textColor,
     marginHorizontal: ".5rem",
-    marginTop: ".3rem",
-    marginBottom: "1.5rem",
+    marginTop: "auto",
   },
 });

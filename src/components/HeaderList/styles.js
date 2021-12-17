@@ -26,10 +26,4 @@ export const styles = EStyleSheet.create({
     marginRight: "0.8rem",
     width: "4.4rem",
   },
-  avatar: {
-    backgroundColor: colors.primaryColor,
-    height: "1.5rem",
-    width: "1.5rem",
-    borderRadius: ".4rem",
-  },
 });

@@ -10,7 +10,7 @@ export default function MovieBackdrop({ urlImage }) {
   return (
     <Image
       source={
-        urlImage?.slice(-4) !== "null"
+        (urlImage?.slice(-4) !== "null") || (urlImage === undefined)
           ? { uri: urlImage }
           : require("../../../assets/img/image-unavailable.png")
       }

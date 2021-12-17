@@ -11,7 +11,7 @@ export const styles = EStyleSheet.create({
     color: colors.textColor,
   },
   landscapet: {
-    marginTop: "1.7rem",
+    marginTop: ".7rem",
     marginHorizontal: ".5rem",
     fontSize: ".9rem",
     color: colors.textColor,

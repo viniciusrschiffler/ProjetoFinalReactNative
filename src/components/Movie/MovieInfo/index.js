@@ -6,10 +6,16 @@ import MovieTitle from "./MovieTitle";
 import MovieDescription from "./MovieDescription";
 import MovieGenre from "./MovieGenre";
 import { colors } from "../../../Styles/colors";
+import { styles } from "./styles";
+import { useOrientation } from "../../../hooks/useOrientation";
 
 export default function MovieInfo({ item }) {
+  const orientation = useOrientation();
+
   return (
-    <View>
+    <View
+      style={orientation.isPortrait ? styles.portrait : styles.landscapet}
+    >
       <MovieReleaseDate>
         Data de lançamento: {item?.releaseDate}
       </MovieReleaseDate>

@@ -8,7 +8,10 @@ export default function MovieDescription({ children }) {
   const orientation = useOrientation();
 
   return (
-    <Text style={orientation.isPortrait ? styles.portrait : styles.landscapet}>
+    <Text
+      style={orientation.isPortrait ? styles.portrait : styles.landscapet}
+      numberOfLines={6}
+    >
       {children}
     </Text>
   );

@@ -11,10 +11,10 @@ export const styles = EStyleSheet.create({
     marginTop: "1.5rem",
   },
   landscapet: {
+    marginTop: "auto",
     flexDirection: "row",
     justifyContent: "space-between",
-    height: "3rem",
-    marginTop: "1.5rem",
+    width: "77.5%"
   },
 
   actionsPortrait: {
@@ -29,6 +29,7 @@ export const styles = EStyleSheet.create({
     justifyContent: "space-between",
     alignItems: "flex-end",
     marginRight: "1rem",
+    marginLeft: "auto",
     width: "8.4rem",
   },
 

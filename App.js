@@ -6,5 +6,5 @@ import ComingSoon from "./src/screens/ComingSoon";
 EStyleSheet.build();
 
 export default function App() {
-  return <ComingSoon />;
+  return <ComingSoon />; // TODO: adicionar 'ComingSoon' nas rotas
 }

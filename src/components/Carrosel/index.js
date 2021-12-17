@@ -17,7 +17,7 @@ export const Carrosel = () =>{
             data={[1,2,3,4,5]}
             renderItem={({item,index})=>(
                 <TouchableOpacity key={index}>
-                    <ImageBackground style={styles.capa}  source={require('../../assets/destaque.jpg')}></ImageBackground>
+                    <ImageBackground style={styles.capa}  source={require('../../assets/img/destaque.jpg')}></ImageBackground>
                 </TouchableOpacity>
             )}/>
         </View>

@@ -12,7 +12,7 @@ export const HomeHeader = ({ screenPosition }) => {
     return (
         <Animated.View style={[styles.container, {
             paddingTop: StatusBar.currentHeight,
-            backgroundColor: screenPosition > 100 ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0)',
+            backgroundColor: screenPosition > 10 ? 'rgba(0,0,0,0.6)' : 'rgba(0,0,0,0)',
             zIndex: 100
         }
         ]}>

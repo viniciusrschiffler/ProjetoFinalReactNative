@@ -9,7 +9,7 @@ const Header = () => {
       <View style={Styles.containerTopo}>
         <Image
           style={Styles.image}
-          source={require("./../../../assets/img/Login/logo.png")}
+          source={require("../../assets/img/Login/logo.png")}
         />
       </View>
     </View>

@@ -6,12 +6,12 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
-import serraApi from "../../service/serratecApi"; 
+import serraApi from "../../services/serratecApi"; 
 
 import Styles from "./Styles";
-import Header from "../../Componentes/Header/Header";
+import Header from "../../components/Header/Header";
 
-const CadastrarCliente = ({ navigation }) => {
+export const CadastrarCliente = ({ navigation }) => {
     const data={
       nome:'', 
       cpf: '',
@@ -97,5 +97,3 @@ const CadastrarCliente = ({ navigation }) => {
     </>
   );
 };
-
-export default CadastrarCliente;

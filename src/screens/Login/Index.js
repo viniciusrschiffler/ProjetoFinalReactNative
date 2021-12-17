@@ -1,10 +1,15 @@
 import React from "react";
 import { View, Text, Image, TouchableHighlight, TextInput } from "react-native";
-import serraApi from "../../service/serratecApi";
+import { useNavigation } from "@react-navigation/native";
+
+
+import serraApi from "../../services/serratecApi";
 
 import Styles from "./Styles";
 
-export const Login = ({ navigation }) => {
+export const Login = () => {
+  const navigation = useNavigation();
+
   const data = {
     name: '', cpf: ''
   }
@@ -22,13 +27,13 @@ export const Login = ({ navigation }) => {
     let userExist = false
     users.data.forEach(user => {
       if (user.usuario == data.name && user.cpf == data.cpf) {
-        console.log("foi")
+        navigation.navigate("tabs")
         userExist = true
         return
       }
     });
     if (!userExist) {
-      console.log("não foi")
+      alert("Usuário não encontrado")
     }
   }
   
@@ -38,7 +43,7 @@ export const Login = ({ navigation }) => {
         <View style={Styles.containerTopo}>
           <Image
             style={Styles.image}
-            source={require("./../../../assets/img/Login/logo.png")}
+            source={require('../../assets/img/Login/logo.png')}
           />
           <Text style={Styles.privacid}>PRIVACIDADE</Text>
         </View>
@@ -60,7 +65,7 @@ export const Login = ({ navigation }) => {
           </TouchableHighlight>
           <TouchableHighlight
             style={Styles.buttonRed}
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("Cadastrar")}
           >
             <Text style={Styles.buttonTextoRed}>Cadastrar</Text>
           </TouchableHighlight>

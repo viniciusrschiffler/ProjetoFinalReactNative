@@ -6,8 +6,8 @@ import { Foundation, Ionicons, FontAwesome5, MaterialCommunityIcons } from '@exp
 import {colors} from '../Styles/colors';
 
 import { Teste1 } from '../screens/teste1'
-
 import { UnfinishedScreen } from '../screens/UnfinishedScreen'
+import { Login } from '../screens/Login'
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +41,7 @@ export function MyTabs() {
     })}>
 
       <Tab.Screen name="Início" component={Teste1} />
-      <Tab.Screen name="Jogos" component={UnfinishedScreen} />
+      <Tab.Screen name="Jogos" component={Login} />
       <Tab.Screen name="Novidades" component={UnfinishedScreen} />
       <Tab.Screen name="Risadas rápidas" component={UnfinishedScreen} />
       <Tab.Screen name="Downloads" component={UnfinishedScreen} />

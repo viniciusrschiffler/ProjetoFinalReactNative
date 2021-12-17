@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import {colors} from '../../Styles/colors';
 import {View, Text, Image, StyleSheet, ScrollView, Linking, Share, Alert} from 'react-native';
 import { useParams } from "react-router-dom";
-import api from '../../services/api/api';
+import api from '../../services/MovieApi';
 import { AntDesign, MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
 import { useFonts } from 'expo-font';
 import SyncStorage from 'sync-storage';

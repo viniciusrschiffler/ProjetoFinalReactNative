@@ -1,34 +1,37 @@
 import React from "react";
-import { View, Text, Image, TouchableHighlight, TextInput} from "react-native";
-import serraApi from "../../service/serratecApi"; 
+import { View, Text, Image, TouchableHighlight, TextInput } from "react-native";
+import serraApi from "../../service/serratecApi";
 
 import Styles from "./Styles";
 
-const Login = ({ navigation }) => {
-  const data={
-    name:'', cpf: ''
+export const Login = ({ navigation }) => {
+  const data = {
+    name: '', cpf: ''
   }
-  function handleChangeData (value, variable) {
+
+  function handleChangeData(value, variable) {
     if (variable == "name") {
       data.name = value
-    } else if(variable == "cpf") {
+    } else if (variable == "cpf") {
       data.cpf = value
     }
   }
-  async function handleSubmit () {
-     const users = await serraApi.get("/cliente")
-     let userExist = false
-     users.data.forEach(user => {
-       if (user.usuario== data.name && user.cpf== data.cpf){
-         console.log ("foi")
-         userExist = true
-         return
-       }
-     });
-     if (!userExist){
-       console.log ("não foi")
-     }
+
+  async function handleSubmit() {
+    const users = await serraApi.get("/cliente")
+    let userExist = false
+    users.data.forEach(user => {
+      if (user.usuario == data.name && user.cpf == data.cpf) {
+        console.log("foi")
+        userExist = true
+        return
+      }
+    });
+    if (!userExist) {
+      console.log("não foi")
+    }
   }
+  
   return (
     <>
       <View style={Styles.container}>
@@ -46,9 +49,9 @@ const Login = ({ navigation }) => {
           Assista onde quiser. Cancele quando quiser.
         </Text>
         <View style={Styles.buscaBox}>
-          <TextInput style={Styles.buscaInput} placeholder="Login" onChange={e => handleChangeData(e.nativeEvent.text, "name") }/>
+          <TextInput style={Styles.buscaInput} placeholder="Login" onChange={e => handleChangeData(e.nativeEvent.text, "name")} />
 
-          <TextInput style={Styles.buscaInput} placeholder="CPF" onChange={e => handleChangeData(e.nativeEvent.text, "cpf") }/>
+          <TextInput style={Styles.buscaInput} placeholder="CPF" onChange={e => handleChangeData(e.nativeEvent.text, "cpf")} />
           <TouchableHighlight
             style={Styles.buttonRed}
             onPress={() => handleSubmit()}
@@ -66,5 +69,3 @@ const Login = ({ navigation }) => {
     </>
   );
 };
-
-export default Login;

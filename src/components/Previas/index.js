@@ -1,7 +1,7 @@
 import React from 'react';
 import { View,Text,TouchableOpacity, FlatList,Image} from 'react-native';
 import {  Title } from 'react-native-paper';
-import {styles} from '../../screens/styles'
+import {styles} from '../../screens/Home/styles'
 
  export const Previas = () =>{
      return(

@@ -1,7 +1,7 @@
 import React from "react";
 import EStyleSheet from "react-native-extended-stylesheet";
 
-import ComingSoon from "./src/Screens/ComingSoon";
+import ComingSoon from "./src/screens/ComingSoon";
 
 EStyleSheet.build();
 

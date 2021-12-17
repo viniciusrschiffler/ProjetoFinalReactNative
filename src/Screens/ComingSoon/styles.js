@@ -1,4 +1,4 @@
-import { StatusBar } from "react-native";
+import React from "react";
 import EStyleSheet from "react-native-extended-stylesheet";
 
 import { colors } from "../../Styles/colors";

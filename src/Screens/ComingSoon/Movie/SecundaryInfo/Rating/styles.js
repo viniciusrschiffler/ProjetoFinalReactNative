@@ -1,6 +1,6 @@
 import EStyleSheet from "react-native-extended-stylesheet";
 
-import { colors } from "../../../Styles/colors";
+import { colors } from "../../../../../Styles/colors";
 
 export const styles = EStyleSheet.create({
   ratingNumber: {

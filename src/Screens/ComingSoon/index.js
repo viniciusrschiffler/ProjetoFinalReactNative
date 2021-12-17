@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { View, FlatList, ActivityIndicator, LogBox } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, FlatList, LogBox } from "react-native";
 
 import Header from "./Header";
 import Movie from "./Movie";
+import FooterList from "./FooterList";
 import { getMovies } from "../../Services/Requests/movies";
-import { colors } from "../../Styles/colors";
 import { styles } from "./styles";
 
 LogBox.ignoreLogs(["Warning: ..."]);
@@ -14,16 +14,6 @@ export default function ComingSoon() {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [count, setCount] = useState(0);
-
-  function FooterList({ load }) {
-    if (!load) return null;
-  
-    return (
-      <View style={{ marginBottom: 16 }}>
-        <ActivityIndicator size={25} color={colors.default} />
-      </View>
-    );
-  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,11 +35,9 @@ export default function ComingSoon() {
     };
 
     fetchData();
+
+    //return () => setMovies([]);
   }, [count]);
-
-  const renderItem = ({ item }) => <Movie item={item} />;
-
-  const moviesMemo = useMemo((item) => renderItem, [movies]);
 
   return (
     <View style={styles.container}>
@@ -57,16 +45,15 @@ export default function ComingSoon() {
       <FlatList
         data={movies}
         renderItem={({ item }) => <Movie item={item} />}
-        //renderItem={({ item }) => moviesMemo}
         keyExtractor={(item) => item.key}
-        contentContainerStyle={{
-          paddingTop: 16,
-          paddingBottom: 16,
-        }}
         onEndReached={() => setCount(count + 1)}
         onEndReachedThreshold={0.1}
         ListFooterComponent={<FooterList load={loading} />}
         initialNumToRender={5}
+        contentContainerStyle={{
+          paddingTop: 16,
+          paddingBottom: 16,
+        }}
       />
     </View>
   );

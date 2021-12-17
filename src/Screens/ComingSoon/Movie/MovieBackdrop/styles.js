@@ -2,11 +2,14 @@ import React from "react-native";
 import EStyleSheet from "react-native-extended-stylesheet";
 
 export const styles = EStyleSheet.create({
-  portrait: {},
-
-  landscapet: {
-    flexDirection: "row",
-    marginVertical: 1,
-    backgroundColor: "blue",
+  portrait: {
+    marginTop: ".5rem",
+    height: "14.5rem",
+    width: "100%",
   },
-});
+  landscapet: {
+    marginTop: ".5rem",
+    height: "16rem",
+    width: "40%",
+  },
+})

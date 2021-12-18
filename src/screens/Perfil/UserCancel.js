@@ -4,6 +4,7 @@ import { View, Text, FlatList, Button, Alert } from 'react-native';
 import { ListItem, Avatar, Icon } from 'react-native-elements';
 import users from '../../data/users';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default props => {
 
@@ -20,14 +21,20 @@ export default props => {
     /*const confirmUserDelection = async (idConta) => {
         console.log(idConta);
     };*/
-    
+
+
 
     const confirmUserDelection = async (idConta) => {
         Alert.alert('Não vá!', 'Deseja mesmo cancelar sua assinatura?', [
             {
                 text: 'Sim',
                 onPress(){
-                    axios.delete("https://ecommerce-residencia.herokuapp.com/cliente/7")
+                    async function deleteUser() {
+        
+                        let userId = await AsyncStorage.getItem('userId')
+                        axios.delete(`https://ecommerce-residencia.herokuapp.com/cliente/${userId}`)
+                    }
+                    deleteUser()
                 }
             },
             {

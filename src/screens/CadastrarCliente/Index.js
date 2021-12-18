@@ -6,12 +6,16 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import serraApi from "../../services/serratecApi"; 
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Styles from "./Styles";
 import Header from "../../components/Header/Header";
 
-export const CadastrarCliente = ({ navigation }) => {
+export const CadastrarCliente = () => {
+  const navigation = useNavigation();
+
     const data={
       nome:'', 
       cpf: '',
@@ -55,8 +59,12 @@ export const CadastrarCliente = ({ navigation }) => {
         data.usuario = value 
         }
     }
-    function handleSubmit () {
-      serraApi.post("/cliente", data)
+    async function handleSubmit () {
+      let user = await serraApi.post("/cliente", data)
+      console.log(user.data);
+      AsyncStorage.setItem('userId', JSON.stringify(user.data.id))
+      navigation.navigate("tabs")
+
     }
   return (
     <>

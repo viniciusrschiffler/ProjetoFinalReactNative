@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Image, TouchableHighlight, TextInput } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from "@react-navigation/native";
 
 
@@ -27,6 +28,7 @@ export const Login = () => {
     let userExist = false
     users.data.forEach(user => {
       if (user.usuario == data.name && user.cpf == data.cpf) {
+        AsyncStorage.setItem('userId', JSON.stringify(user.id))
         navigation.navigate("tabs")
         userExist = true
         return

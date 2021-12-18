@@ -16,6 +16,8 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 <img src="https://avatars.githubusercontent.com/u/73251848?v=4" alt="drawing" style="width:72px; border-radius: 50%;"/>
 
 <img src="https://avatars.githubusercontent.com/u/89466530?v=4" alt="drawing" style="width:72px; border-radius: 50%;"/>
+  
+  <img src="https://avatars.githubusercontent.com/u/79330757?v=4" alt="drawing" style="width:72px; border-radius: 50%;"/>
 </div>
 
 ### Danielli Yasmin Pinheiro Caovilla
@@ -24,3 +26,4 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 ### Natan Altomar Pereira
 ### Willian Motta Ferreira Braga
 ### Paulo Rubens Marques Pereira
+### Richard Okubo
